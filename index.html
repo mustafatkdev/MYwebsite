@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roj Quest — Think. Code. Conquer.</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+<header class="nav">
+  <a class="logo" href="#home" aria-label="Roj Quest home">
+    <img class="logo-img" src="logo.png" alt="" width="62" height="40">
+    <span>Roj <b>Quest</b></span>
+  </a>
+  <nav class="links" id="links">
+    <a href="#home" data-view="home">Home</a><a href="#play" data-view="play">Play</a><a href="#challenges" data-view="challenges">Challenges</a><a href="#leaderboard" data-view="leaderboard">Leaderboard</a><a href="#about" data-view="about">About</a>
+  </nav>
+  <a class="btn primary" href="#play">Play Now</a>
+</header>
+
+<main>
+<section id="home" class="view">
+  <div class="hero">
+    <div class="hero-text">
+      <p class="tag">Think. Code. Conquer.</p>
+      <h1>YOUR NEXT QUEST STARTS HERE.</h1>
+      <p class="lead">Test your programming knowledge, solve challenges, earn XP, and climb the leaderboard.</p>
+      <div class="row"><a class="btn primary big" href="#play">Start Your Quest</a><a class="btn ghost big" href="#challenges">Explore Challenges</a></div>
+    </div>
+    <div class="editor" aria-hidden="true">
+      <div class="dots"><i></i><i></i><i></i><span>quest.c</span></div>
+<pre><code><span class="k">#include</span> <span class="s">&lt;stdio.h&gt;</span>
+
+<span class="t">int</span> <span class="f">main</span>(<span class="t">void</span>) {
+    <span class="t">int</span> xp = <span class="n">0</span>;
+    <span class="k">for</span> (<span class="t">int</span> i = <span class="n">1</span>; i &lt;= <span class="n">10</span>; i++) {
+        <span class="k">if</span> (answer(i)) xp += <span class="n">20</span>;
+    }
+    <span class="f">printf</span>(<span class="s">"XP: %d\n"</span>, xp);
+    <span class="k">return</span> <span class="n">0</span>;<span class="cursor"></span>
+}</code></pre>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="stats" id="stats"></div>
+    <p class="note">All numbers above are real: they are counted from the content in this site and the activity saved in this browser. Nothing is simulated.</p>
+
+    <p class="eyebrow">[ FEATURES ]</p><h2>What you can <em>do</em></h2>
+    <div class="grid4">
+      <article class="card"><div class="ic">❯_</div><h3>Interactive quizzes</h3><p>Multiple-choice C questions with code panels and instant explanations.</p></article>
+      <article class="card"><div class="ic">⏱</div><h3>Timed challenges</h3><p>Every question has a countdown. Answer faster to earn bonus points.</p></article>
+      <article class="card"><div class="ic">★</div><h3>XP and achievements</h3><p>Level up as you play and unlock badges for streaks and perfect rounds.</p></article>
+      <article class="card"><div class="ic">♛</div><h3>Leaderboard</h3><p>Your best runs are ranked so the whole festival can see who leads.</p></article>
+    </div>
+
+    <p class="eyebrow">[ PROCESS ]</p><h2>How it <em>works</em></h2>
+    <ol class="steps">
+      <li><b>Choose a challenge</b><span>Pick a topic, a mixed round, or the speed round.</span></li>
+      <li><b>Answer programming questions</b><span>Read the code, think, and pick one of four answers.</span></li>
+      <li><b>Earn points and XP</b><span>Correct answers score points. Fast ones score more.</span></li>
+      <li><b>Improve your ranking</b><span>Beat your best score and move up the leaderboard.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="play" class="view"><div class="wrap" id="playBody"></div></section>
+
+<section id="challenges" class="view"><div class="wrap">
+  <h1 class="h1s">Challenges</h1>
+  <p class="lead">Pick a topic to practise, or take on a mixed round. Questions are shuffled each time.</p>
+  <div class="grid3" id="challengeGrid"></div>
+</div></section>
+
+<section id="leaderboard" class="view"><div class="wrap">
+  <h1 class="h1s">Leaderboard</h1>
+  <p class="lead" id="boardLead">Top 10 scores.</p>
+  <div id="board"></div>
+  <button class="btn ghost" id="clearBoard">Clear leaderboard</button>
+</div></section>
+
+<section id="about" class="view"><div class="wrap narrow">
+  <h1 class="h1s">About Roj Quest</h1>
+  <p class="lead">Roj Quest is a programming quiz game built for a university festival. It focuses on the C language and runs fully in the browser, with no server or account.</p>
+  <h2>Scoring</h2>
+  <p>Easy questions are worth 10 points, medium 20, and hard 30. A correct answer also adds a time bonus of up to 10 points. XP equals the points you score, and every 100 XP is one level.</p>
+  <h2>Modes</h2>
+  <p><b>Topic rounds</b> use the 4 questions of one category with 20 seconds each. <b>Mixed Quest</b> is 10 random questions with 20 seconds each. <b>Speed Round</b> is 10 random questions with only 10 seconds each.</p>
+  <h2>Your data</h2>
+  <p>No registration is needed. Your name and XP are saved in this browser. When you finish a quiz, your name and score are also sent to the shared leaderboard if the organiser has turned it on. The button below erases only the data saved in this browser.</p>
+  <button class="btn danger" id="resetAll">Reset all saved data</button>
+</div></section>
+</main>
+
+<footer class="foot">
+  <div><a class="logo" href="#home"><span>Roj <b>Quest</b></span></a><p>A C programming quiz game for university festivals. Think. Code. Conquer.</p></div>
+  <div class="flinks"><a href="#home">Home</a><a href="#play">Play</a><a href="#challenges">Challenges</a><a href="#leaderboard">Leaderboard</a><a href="#about">About</a></div>
+  <p class="copy">© 2026 Roj Quest. All rights reserved.</p>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="questions.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
